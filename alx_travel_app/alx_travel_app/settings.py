@@ -18,6 +18,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 from dotenv import load_dotenv
 CHAPA_SECRET_KEY = os.getenv('CHAPA_SECRET_KEY')
 CHAPA_PUBLIC_KEY = os.getenv('CHAPA_PUBLIC_KEY')
+# Chapa API settings
+CHAPA_INITIALIZE_URL = "https://api.chapa.co/v1/transaction/initialize"
+CHAPA_CALLBACK_URL = "https://yourdomain.com/api/payment-callback/"  # or your actual callback URL
 
 
 # Quick-start development settings - unsuitable for production
@@ -41,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'rest_framework',
+    'listings',  # <-- Add this line
 ]
 
 MIDDLEWARE = [

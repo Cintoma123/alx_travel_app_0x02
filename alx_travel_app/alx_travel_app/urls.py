@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from listings.views import InitializePaymentView, VerifyPaymentView
+from listings.views import InitializePaymentView
 
-urlpatterns = [
+urlpatterns = [    
     path('admin/', admin.site.urls),
-    path('api/initiate-payment/', InitializePaymentView.as_view(), name='initiate-payment'),
-    path('api/verify-payment/', VerifyPaymentView.as_view(), name='verify-payment'),
+    path('api/initiate_payment/', InitializePaymentView.as_view(), name='initiate_payment'),
+    
 ]
 
